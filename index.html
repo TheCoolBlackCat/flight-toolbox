@@ -19,8 +19,11 @@
               <a class="nav-link" href="#plan">Plan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#atis">Plan</a>
-              </li>
+                <a class="nav-link" href="#atis">ATIS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#links">Links</a>
+            </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="#fuel">Fuel</a>
             </li> -->
@@ -33,6 +36,7 @@
 
     <datalist id="CallsignList">
         <option value="N289K"></option>
+        <option value="N258M"></option>
         <option value="123AB"></option>
     </datalist>
     <datalist id="AircraftList">
@@ -44,6 +48,11 @@
         <option value="KSBB"></option>
         <option value="KEMT"></option>
         <option value="KSBP"></option>
+    </datalist>
+    <datalist id="RemarksList">
+        <option value="CAT-"></option>
+        <option value="I-"></option>
+        <option value="Pattern Work"></option>
     </datalist>
 
     <div class="container">
@@ -136,7 +145,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="Remarks">Remarks</label>
-                        <input type="text" class="form-control" id="Remarks" name="flightplan[remarks]" value="CAT-">
+                        <input type="text" class="form-control" id="Remarks" name="flightplan[remarks]" list="RemarksList">
                     </div>
                 </div>
 
@@ -157,10 +166,10 @@
             </div>
             
             <div class="col-md-12">
-                <form id="atisForm" action="https://www.pilotedge.net/atis" method="get">
-                    <div class="form-group">
-                        <label for="atisICAO">ICAO Code</label>
-                        <input id="atisICAO" maxlength="4" name="icao" size="4" type="text" list="AirportList">
+                <form class="form-inline" id="atisForm" action="https://www.pilotedge.net/atis" method="get">
+                    <div class="form-row">
+                        <label for="atisICAO" class="mr-sm-2">ICAO Code</label>
+                        <input id="atisICAO" class="form-control mr-sm-2" maxlength="4" name="icao" size="4" type="text" list="AirportList">
                         <input class="btn btn-primary" type="submit" value="Lookup">
                     </div>
                 </form>
